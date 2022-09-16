@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Primo
 //
-//  Created by Refr Asta on 16/09/2022.
+//  Created by migaldottir on 16/09/2022.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemMint
         view.addSubview(imageView)
         imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        imageView.center = view.center 
+        imageView.center = view.center
         // Do any additional setup after loading the view.
     }
 
