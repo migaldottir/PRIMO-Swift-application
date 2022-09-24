@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // definitions of the variables "imageView" and "button"
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -20,8 +21,9 @@ class ViewController: UIViewController {
         button.setTitle("Random Photo", for: .normal)
         button.setTitleColor(.white, for: .normal)
         return button
+       
     }()
-
+//definition of the variable "colours"
     let colours: [UIColor] = [
         .systemPink,
         .white,
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
         .systemOrange
     ]
     override func viewDidLoad() {
+        //definition of the overridden function "viewDidLoad"  [photo func]
         super.viewDidLoad()
         view.backgroundColor = .systemMint
         view.addSubview(imageView)
@@ -44,12 +47,14 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapButton() {
+        //defining what happens when you didTapButton
         getRandomPhoto()
         
         view.backgroundColor = colours.randomElement()
     }
     
     override func viewDidLayoutSubviews() {
+        //definition of the overridden function "viewDidLayoutSubviews"  [button func]
         super.viewDidLayoutSubviews()
         button.frame = CGRect(x: 20,
                               y: view.frame.size.height-160-view.safeAreaInsets.bottom,
@@ -57,6 +62,7 @@ class ViewController: UIViewController {
                               height: 55)    }
     
     func getRandomPhoto() {
+        //definition of the function resposible for getting photos from the provided URL
         let urlString =
             "https://source.unsplash.com/random/600x600"
         let url = URL(string: urlString)!
