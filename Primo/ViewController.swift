@@ -29,21 +29,26 @@ class ViewController: UIViewController {
         imageView.center = view.center
         
         view.addSubview(button)
-        button.frame = CGRect(x: 20, y: view.frame.size.height-50-view.safeAreaInsets.bottom, width: view.frame.size.width-40, height: 50)
-        
+             
         getRandomPhoto()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        button.frame = CGRect(x: 20,
+                              y: view.frame.size.height-50-view.safeAreaInsets.bottom,
+                              width: view.frame.size.width-40,
+                              height: 50)    }
+    
     func getRandomPhoto() {
         let urlString =
-        "http://source.unsplash.com/random/600x600"
+            "https://source.unsplash.com/random/600x600"
         let url = URL(string: urlString)!
         guard let data = try? Data(contentsOf: url) else {
             return
         }
         imageView.image = UIImage (data: data)
     }
-    
-   
 }
 
 
