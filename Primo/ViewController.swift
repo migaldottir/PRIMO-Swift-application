@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         return button
     }()
+
+    let colours: [UIColor] = [
+        .systemPink,
+        .white,
+        .systemMint,
+        .systemTeal,
+        .systemOrange
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemMint
@@ -37,12 +45,14 @@ class ViewController: UIViewController {
     
     @objc func didTapButton() {
         getRandomPhoto()
+        
+        view.backgroundColor = colours.randomElement()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        button.frame = CGRect(x: 30,
-                              y: view.frame.size.height-150-view.safeAreaInsets.bottom,
+        button.frame = CGRect(x: 20,
+                              y: view.frame.size.height-160-view.safeAreaInsets.bottom,
                               width: view.frame.size.width-40,
                               height: 55)    }
     
